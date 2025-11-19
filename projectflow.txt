@@ -23,12 +23,17 @@
 
 9. Do a git add-commit-push to mark this stage as first version of data. [Mane git add . ....]
 
-10. Now make changes to mycode.py to append a new row in data, check changes via "dvc status" [Jaise hi hum apne mycode.py file me ek row of data add karenge waise hi hamare data/sample_data.csv file me bhi woh add ho jayega, jise hum check kar sakte hai (dvc status)]
+10. Now make changes to mycode.py to append a new row in data, check changes via "dvc status" [Run command: python mycode.py] [Jaise hi hum apne mycode.py file me ek row of data add karenge waise hi hamare data/sample_data.csv file me bhi woh add ho jayega, jise hum check kar sakte hai (dvc status)]
 
-11. Again - - "dvc commit" [Jaise hi ye likhenge waise hi waise hi data.dvc me "md5" ka hash badal jayega aur isko ""git track karta hai"] and then "dvc push" [Ye likhne ke baad isko dvc track karne lag jayega aur saath hi "S3" me do aur folders create kar dega respect to changes data] [git add . , git commit -m "Second version of data saved"]
+11. Again - - "dvc commit" [Jaise hi ye likhenge waise hi waise hi data.dvc me "md5" ka hash badal jayega aur isko ""git track karta hai"] and then "dvc push" [Ye likhne ke baad isko dvc track karne lag jayega aur saath hi "S3" me do aur folders create kar dega respect to changes data] [git add . , git commit -m "Second version of data saved", git push origin main, git log --oneline]
 
-12. Then git add-commit-push (we're saving V2 of our data at this point)
+12. Then git add-commit-push (we're saving V2 of our data at this point) [11 wala hai]
 
-13. Check dvc/git status, everything should be upto date.
+13. Check dvc/git status, everything should be upto date. [11 wala hai]
 
-14. Now repeat step 10-12 for v3 of data.
+14. Now repeat step 10-11-12 for v3 of data. [Same with one more row of data,]
+
+15. Make changes on mycode.py [Add one more row of data V3] [Run command: python mycode.py] [Jaise hi hum apne mycode.py file me ek row of data add karenge waise hi hamare data/sample_data.csv file me bhi woh add ho jayega, jise hum check kar sakte hai (dvc status)]
+
+16. Again - - "dvc commit" [Jaise hi ye likhenge waise hi waise hi data.dvc me "md5" ka hash badal jayega aur isko ""git track karta hai"] and then "dvc push" [Ye likhne ke baad isko dvc track karne lag jayega aur saath hi "S3" me do aur folders create kar dega respect to changes data] [git add . , git commit -m "Third version of data saved", git push origin main, git log --oneline]
+
