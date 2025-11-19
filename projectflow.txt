@@ -56,7 +56,27 @@ d89f8b9 Initial commit
 
 
 
-git checkout fc95a76 [Jaise hi hum ye likhenge waise hi hum apne respected <sha-id> wale code ke state me chale jayenge (mycode.py me), aur saath hi usse respected "data.dvc" wale md5 hash me bhi chale jayenge, lekin jaise hi hum "dvc status" likhnege waise hi dvc hume batayege ki humara code modify huwa hai]
+1. git checkout fc95a76 [Jaise hi hum ye likhenge waise hi hum apne respected <sha-id> wale code ke state me chale jayenge (mycode.py me), aur saath hi usse respected "data.dvc" wale md5 hash me bhi chale jayenge, lekin jaise hi hum "dvc status" likhnege waise hi dvc hume batayege ki humara code modify huwa hai ya kuchh toh, garbar hai {Kyuki, humare pass abhi jo code/data hai in (data/sample_data.csv) usme wah dono row of data hai jisko humne 10 aur 15 me add kiya tha, aur wahi dusri taraf jo hamara data.dvc ka "md5" hash hai, wah keh raha hai ya uske anusar "data/sample_data.csv" ka jo data hai wah match nahi kar raha hai, kyuki, "data/sample_data.csv" me humne jo dono row add kiya tha 10 aur 15 me wah nahi hona chahiye tha, jo pehle wali isthiti thi jisme sirf 3 columns the wahi rehne chahiye na ki 5 mane dusra version of data jo pehle tah wah hona chahiye tha}, ye problem solve ho jayega through "dvc pull" command]
+
+2. dvc pull [Ab hum apne data ke thik usi version pe chale jayenge jaha par hume apne data.dvc ke anusar hona chahiye tha, so, ab humare "data/sample_data.csv" me sirf 3 rows of data bachega na ki 5.] [We can also check dvc status]
+
+
+
+"""""AB AGAR HUM PHIR SE APNE US CODE/DATA VERSION PE JANA CHAH RAHE HAI, JAHA PAR HUMARE DATA ("data/sample_data.csv") ME 5 ROWS OF DATA THI""""""
+
+1. git checkout main [Jaise hi ye likhenge waise, hi hum apne us purane wale stage me chale aayenge, jaha par humare data ("data/sample_data.csv") me 5 rows thi, aur saath hi usse respected "data.dvc" wale md5 hash me bhi chale jayenge {see in data.dvc and mycode.py but, not in ("data/sample_data.csv") because one more command left} 
+
+[aur saath hi usse respected "data.dvc" wale md5 hash me bhi chale jayenge, lekin jaise hi hum "dvc status" likhnege waise hi dvc hume batayege ki humara code modify huwa hai ya kuchh toh, garbar hai {Kyuki, humare pass abhi jo code/data hai in (data/sample_data.csv) usme sirf 3 rows of data hai, aur wahi dusri taraf jo hamara data.dvc ka "md5" hash hai, wah keh raha hai ya uske anusar "data/sample_data.csv" ka jo data hai wah match nahi kar raha hai, kyuki, "data/sample_data.csv" me humne jo dono row add kiya tha 10 aur 15 me wah nahi hai, jo pehle wali isthiti thi jisme 5 columns the wahi rehne chahiye na ki 3 mane dusra version of data jo pehle tah wah hona chahiye tha}, ye problem solve ho jayega through "dvc pull" command]]
+
+2. dvc pull
+
+
+Note: DVC harek tarah ke artifact files ke saath kam sar sakta hai, chahe wah ho JSON, CSV... bas, app DVC ko bata do iska "Versioning" maintain karo, toh DVC ye kar lega, uske against me DVC aapko ye "data.dvc" file create karke dega jisko aap git se track karwate rehna, jitne baar bhi app git ke us[kisi specific] version of code pe roll back karenge toh, "data.dvc" ka "md5" ka hash change ho jayega, aur ye "md5" ka hash use karke "dvc pull" lagana aapko corresponding data bhi mil jayega.
+
+
+
+
+
 
 
 
