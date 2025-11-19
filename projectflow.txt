@@ -37,3 +37,27 @@
 
 16. Again - - "dvc commit" [Jaise hi ye likhenge waise hi waise hi data.dvc me "md5" ka hash badal jayega aur isko ""git track karta hai"] and then "dvc push" [Ye likhne ke baad isko dvc track karne lag jayega aur saath hi "S3" me do aur folders create kar dega respect to changes data] [git add . , git commit -m "Third version of data saved", git push origin main, git log --oneline]
 
+
+
+"ROLL BACK ON OUR PREVIOUS VERSION/STATE OF DATA"
+
+git log --oneline  [We get below]
+
+
+
+b48d652 (HEAD -> main, origin/main, origin/HEAD) Third version of data saved
+9eb4fef Second version of data saved
+fc95a76 first version of data saved
+0a3ff33 DVC initiated with data version1
+ebf9439 stop tracking data
+1d008b8 first commit before DVC
+d89f8b9 Initial commit
+
+
+
+
+git checkout fc95a76 [Jaise hi hum ye likhenge waise hi hum apne respected <sha-id> wale code ke state me chale jayenge (mycode.py me), aur saath hi usse respected "data.dvc" wale md5 hash me bhi chale jayenge, lekin jaise hi hum "dvc status" likhnege waise hi dvc hume batayege ki humara code modify huwa hai]
+
+
+
+
